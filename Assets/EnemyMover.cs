@@ -5,11 +5,13 @@ using UnityEngine;
 public class EnemyMover : MonoBehaviour
 {
 
-    [SerializeField] List<Waypoint> path;
+
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(LogPathCoordinates(path));
+        Pathfinder pathfinder = FindObjectOfType<Pathfinder>();
+        var path = pathfinder.GetPath();
+        StartCoroutine(FollowPath(path));
     }
 
     // Update is called once per frame
@@ -18,7 +20,7 @@ public class EnemyMover : MonoBehaviour
         
     }
 
-    IEnumerator LogPathCoordinates (List<Waypoint> path) {
+    IEnumerator FollowPath (List<Waypoint> path) {
         Debug.Log("Starting Patrol");
         foreach(Waypoint block in path) {
             Debug.Log("Visiting block: " + block.transform.position);
