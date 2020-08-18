@@ -29,16 +29,20 @@ public class Pathfinder : MonoBehaviour
 
     private void CreatePath () {
         path.Add(endingBlock);
+        endingBlock.isPlacable = false;
         Waypoint previous = endingBlock.exploredFrom;
         while (previous != startingBlock) {
-            previous.SetTopColor(Color.blue);
             path.Add(previous);
+            previous.isPlacable = false;
             previous = previous.exploredFrom;
         }
 
         path.Add(startingBlock);
+        startingBlock.isPlacable = false;
         path.Reverse();
     }
+
+
 
     public List<Waypoint> GetPath() {
         if (path.Count == 0)
@@ -56,12 +60,10 @@ public class Pathfinder : MonoBehaviour
             searchCenter = queue.Dequeue();
             searchCenter.isExplored = true;
             if (searchCenter == endingBlock) {
-                Debug.Log("ENDPOINT FOUND AT " + searchCenter);
                 isRunning = false;
             };
             ExploreNeighbors();
         }
-        Debug.Log("FINISHED SEARCHING");
     }
 
     private void ExploreNeighbors() {

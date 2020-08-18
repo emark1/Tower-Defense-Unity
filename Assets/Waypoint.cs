@@ -11,11 +11,20 @@ public class Waypoint : MonoBehaviour
     Vector2Int gridPos;
     public bool isExplored = false;
     public Waypoint exploredFrom;
+    public bool isPlacable = true;
 
     void Update () {
         // if (isExplored) {
         //     SetTopColor(exploredColor);
         // }
+    }
+
+    void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0) && isPlacable) {
+            Debug.Log("Mouse is over: " + GetGridPos());
+        }
+        
     }
 
     public int GetGridSize() {

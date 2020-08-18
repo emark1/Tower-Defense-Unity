@@ -16,22 +16,24 @@ public class Tower : MonoBehaviour
 
     void Update()
     {
-        FaceAndFire();
+        FindEnemies();
+        if (targetEnemy) {
+            FaceAndFire();
+        } else {
+            FireWeapon(false);
+        }   
     }
 
     private void FaceAndFire() {
-        FindEnemies();
-        
-        if (targetEnemy != null) {
-            if (RangeFinder() <= 45f) {
-                if (targetEnemy == null) {return;}
-                objectToPan.LookAt(targetEnemy);
-                FireWeapon(true);
-            } else {
-                FireWeapon(false);
-                objectToPan.rotation = Quaternion.identity;
-            }
+        if (RangeFinder() <= 45f) {
+            if (targetEnemy == null) {return;}
+            objectToPan.LookAt(targetEnemy);
+            FireWeapon(true);
+        } else {
+            FireWeapon(false);
+            objectToPan.rotation = Quaternion.identity;
         }
+        
     }
 
     private void FindEnemies() {
@@ -69,6 +71,5 @@ public class Tower : MonoBehaviour
         float distanceToEnemy = Vector3.Distance(targetEnemy.transform.position, gameObject.transform.position);
         return distanceToEnemy;
     }
-
 
 }
