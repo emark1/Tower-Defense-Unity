@@ -20,11 +20,8 @@ public class EnemyDamage : MonoBehaviour
 
     private void OnParticleCollision(GameObject other) {
         health -= 1;
-        Debug.Log(health);
         if (health <= 0) {
-
-            Debug.Log("ENEMY DESTROYED!");
+            Destroy(gameObject);
         }
-
     }
 }
