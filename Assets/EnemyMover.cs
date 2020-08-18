@@ -23,7 +23,6 @@ public class EnemyMover : MonoBehaviour
     IEnumerator FollowPath (List<Waypoint> path) {
         Debug.Log("Starting Patrol");
         foreach(Waypoint block in path) {
-            Debug.Log("Visiting block: " + block.transform.position);
             transform.position = block.transform.position;
             yield return new WaitForSeconds(1f);
         }
