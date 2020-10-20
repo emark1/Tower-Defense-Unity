@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7434155511019439415}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -10, y: 0, z: -80}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 7432627470047029639}
@@ -49,6 +49,7 @@ MonoBehaviour:
   targetEnemy: {fileID: 0}
   attackRange: 45
   bullets: {fileID: 7434155510395136572}
+  baseWaypoint: {fileID: 0}
 --- !u!1001 &5266963339780154438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60,6 +61,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bullets
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329125822295740026, guid: 21923233965135e40afd0624bd9aa5af,
+        type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329125822295740026, guid: 21923233965135e40afd0624bd9aa5af,
+        type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329125822295740026, guid: 21923233965135e40afd0624bd9aa5af,
+        type: 3}
+      propertyPath: CollisionModule.minKillSpeed
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329125822295740026, guid: 21923233965135e40afd0624bd9aa5af,
+        type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3329125822295740024, guid: 21923233965135e40afd0624bd9aa5af,
         type: 3}
@@ -115,21 +136,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3329125822295740026, guid: 21923233965135e40afd0624bd9aa5af,
-        type: 3}
-      propertyPath: CollisionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3329125822295740026, guid: 21923233965135e40afd0624bd9aa5af,
-        type: 3}
-      propertyPath: CollisionModule.type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3329125822295740026, guid: 21923233965135e40afd0624bd9aa5af,
-        type: 3}
-      propertyPath: CollisionModule.collisionMessages
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21923233965135e40afd0624bd9aa5af, type: 3}

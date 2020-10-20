@@ -40,7 +40,15 @@ public class Pathfinder : MonoBehaviour
         path.Add(startingBlock);
         startingBlock.isPlacable = false;
         path.Reverse();
+        // SetAsPath(startingBlock);
+        // path.Reverse();
     }
+
+    private void SetAsPath(Waypoint waypoint)
+    {
+        path.Add(waypoint);
+        waypoint.isPlacable = false;
+    }  
 
 
 

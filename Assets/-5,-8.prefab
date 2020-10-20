@@ -59,8 +59,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exploredColor: {r: 0, g: 0.4784314, b: 0.8000001, a: 0}
+  tower: {fileID: 7434155511019439412, guid: 8982e4e357752dc45b666338c157279b, type: 3}
   isExplored: 0
   exploredFrom: {fileID: 0}
+  isPlacable: 1
 --- !u!1 &7945916210141109803
 GameObject:
   m_ObjectHideFlags: 0

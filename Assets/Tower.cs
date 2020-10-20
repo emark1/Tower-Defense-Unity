@@ -13,7 +13,7 @@ public class Tower : MonoBehaviour
 
     Spawner spawner;
 
-
+    public Waypoint baseWaypoint;
     void Update()
     {
         FindEnemies();
